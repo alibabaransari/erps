@@ -53,7 +53,7 @@
       @endguest
 
       <main id="main" class="main">
-        <div class="pagetitle">
+        {{-- <div class="pagetitle">
             <h1>Dashboard</h1>
             <nav>
               <ol class="breadcrumb">
@@ -61,7 +61,7 @@
                 <li class="breadcrumb-item active">Dashboard</li>
               </ol>
             </nav>
-          </div>
+          </div> --}}
             @yield('content')
             {{-- @include('layouts.penal.control_side') --}}
         </main>

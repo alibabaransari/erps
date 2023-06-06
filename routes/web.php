@@ -21,12 +21,14 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
-  
+// Route::get('/',[HomeController::class, 'web']);
+
 Auth::routes();
   
 Route::get('/home', [HomeController::class, 'index'])->name('home');
   
 Route::group(['middleware' => ['auth']], function() {
+     Route::get('/admin', [HomeController::class, 'index'])->name('home');
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);

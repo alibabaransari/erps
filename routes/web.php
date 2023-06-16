@@ -7,6 +7,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PermissionController;
+use Illuminate\Support\Facades\Artisan;
   
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 // Route::get('/',[HomeController::class, 'web']);
-
+Route::get('/config-cache', function () {
+    $exitCode = Artisan::call('config:cache');
+    return 'Configuration cache created successfully!';
+});
 Auth::routes();
   
 Route::get('/home', [HomeController::class, 'index'])->name('home');
